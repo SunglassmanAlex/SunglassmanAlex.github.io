@@ -28,7 +28,7 @@
 <meta property="og:description" content="离散数学作业 20251023 第七章">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-11-08T14:16:04.000Z">
-<meta property="article:modified_time" content="2025-11-08T16:05:59.506Z">
+<meta property="article:modified_time" content="2025-11-08T16:08:14.177Z">
 <meta property="article:author" content="Sunglassman">
 <meta property="article:tag" content="作业">
 <meta property="article:tag" content="离散数学">
@@ -217,7 +217,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-11-09 00:05:59" itemprop="dateModified" datetime="2025-11-09T00:05:59+08:00">2025-11-09</time>
+      <time title="修改时间：2025-11-09 00:08:14" itemprop="dateModified" datetime="2025-11-09T00:08:14+08:00">2025-11-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -307,23 +307,25 @@
 <p>解：设 $OGF$ 为 $A(x) = \sum_{n=0}^\infty a_n x^n = a_0 + a_1 x + a_2 x^2 + \dots$</p>
 <p>则有 $$\sum_{n=2}^\infty a_n x^n = \sum_{n=2}^\infty (5a_{n-1} - 6a_{n-2}) x^n$$</p>
 <p>$$\sum_{n=2}^\infty a_n x^n = 5 \sum_{n=2}^\infty a_{n-1} x^n - 6 \sum_{n=2}^\infty a_{n-2} x^n$$</p>
-<p>故 $$A(x) - a_0 - a_1 x = 5x(A(x) - a_0) - 6x^2 A(x)$$，代入 $a_0=1,a-1=-2$，有</p>
-<p>$$A(x) - 1 - (-2)x = 5x(A(x) - 1) - 6x^2 A(x)$$.</p>
-<p>$$A(x) = \dfrac{1 - 7x}{1 - 5x + 6x^2}=\dfrac{5}{1 - 2x} - \dfrac{4}{1 - 3x}$$.</p>
-<p>所以 $$A(x) = 5 \sum_{n=0}^\infty (2x)^n - 4 \sum_{n=0}^\infty (3x)^n$$.</p>
-<p>$$A(x) = \sum_{n=0}^\infty (5 \cdot 2^n - 4 \cdot 3^n) x^n$$.</p>
-<p>得到 $$a_n = 5 \cdot 2^n - 4 \cdot 3^n$$.</p>
+<p>故 $$A(x) - a_0 - a_1 x = 5x(A(x) - a_0) - 6x^2 A(x)$$</p>
+<p>代入 $a_0=1,a-1=-2$，有</p>
+<p>$$A(x) - 1 - (-2)x = 5x(A(x) - 1) - 6x^2 A(x)$$</p>
+<p>$$A(x) = \dfrac{1 - 7x}{1 - 5x + 6x^2}=\dfrac{5}{1 - 2x} - \dfrac{4}{1 - 3x}$$</p>
+<p>所以 $$A(x) = 5 \sum_{n=0}^\infty (2x)^n - 4 \sum_{n=0}^\infty (3x)^n$$</p>
+<p>$$A(x) = \sum_{n=0}^\infty (5 \cdot 2^n - 4 \cdot 3^n) x^n$$</p>
+<p>得到 $$a_n = 5 \cdot 2^n - 4 \cdot 3^n$$</p>
 <p>(2) $a_n = \sum_{k=1}^{n-1} a_k a_{n-k}$ ($n \ge 2$)，这里 $a_1 = 1$。</p>
 <p>定义 $a_0=0$.</p>
 <p>设 $OGF$ 为 $A(x) = \sum_{n=0}^\infty a_n x^n = a_0 + a_1 x + a_2 x^2 + \dots = \sum_{n=1}^\infty a_n x^n$.</p>
-<p>$$A(x)^2 = \left( \sum_{n=1}^\infty a_n x^n \right) \left( \sum_{k=1}^\infty a_k x^k \right)$$.</p>
-<p>$$A(x)^2 = \sum_{n=2}^\infty \left( \sum_{k=1}^{n-1} a_k a_{n-k} \right) x^n$$.</p>
-<p>故由递推关系得 $$A(x)^2 = \sum_{n=2}^\infty a_n x^n$$.</p>
+<p>$$A(x)^2 = \left( \sum_{n=1}^\infty a_n x^n \right) \left( \sum_{k=1}^\infty a_k x^k \right)$$</p>
+<p>$$A(x)^2 = \sum_{n=2}^\infty \left( \sum_{k=1}^{n-1} a_k a_{n-k} \right) x^n$$</p>
+<p>故由递推关系得 $$A(x)^2 = \sum_{n=2}^\infty a_n x^n$$</p>
 <p>由于 $$A(x) = a_0 x^0 + a_1 x^1 + \sum_{n=2}^\infty a_n x^n$$</p>
 <p>$$A(x) = 0 + a_1 x + \sum_{n=2}^\infty a_n x^n$$</p>
 <p>$$A(x) = a_1 x + A(x)^2$$</p>
-<p>代入 $a_1=1$ 有 $$A(x) = x + A(x)^2$$, 解得 $$A(x) = \dfrac{1 \pm \sqrt{1 - 4x}}{2}$$.</p>
-<p>由于 $a_0=0$，故取减号，所以 $$A(x) = \dfrac{1 - \sqrt{1 - 4x}}{2}$$.</p>
+<p>代入 $a_1=1$ 有 $$A(x) = x + A(x)^2$$</p>
+<p>解得 $$A(x) = \dfrac{1 \pm \sqrt{1 - 4x}}{2}$$</p>
+<p>由于 $a_0=0$，故取减号，所以 $$A(x) = \dfrac{1 - \sqrt{1 - 4x}}{2}$$</p>
 <p>由二项式定理，$\sqrt{1-4x}=1+\sum_{k=1}^{\infty}\binom{1/2}{k}(-4x)^k$</p>
 <p>故 $x^n$ 的系数为 $\dfrac{1}{2(2n-1)}\dbinom{2n}{n}$.</p>
 <hr>
