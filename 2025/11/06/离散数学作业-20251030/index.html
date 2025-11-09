@@ -28,7 +28,7 @@
 <meta property="og:description" content="离散数学作业 20251030 第八章">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-11-06T14:19:43.000Z">
-<meta property="article:modified_time" content="2025-11-08T14:18:05.010Z">
+<meta property="article:modified_time" content="2025-11-09T11:53:00.907Z">
 <meta property="article:author" content="Sunglassman">
 <meta property="article:tag" content="作业">
 <meta property="article:tag" content="离散数学">
@@ -217,7 +217,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-11-08 22:18:05" itemprop="dateModified" datetime="2025-11-08T22:18:05+08:00">2025-11-08</time>
+      <time title="修改时间：2025-11-09 19:53:00" itemprop="dateModified" datetime="2025-11-09T19:53:00+08:00">2025-11-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -299,6 +299,33 @@
 <p>则 $deg(v_i)+deg(v_j)\ge n-1$.</p>
 <p>去掉 $v_i,v_j$ 两个点后图中还剩 $n-2$ 个点，由抽屉原理知：必存在至少一个点，使得这个点与 $v_i,v_j$ 均存在连边，则 $v_i,v_j$ 连通，矛盾！</p>
 <p>所以 $G$ 是连通的。</p>
+<p><strong>8.18</strong></p>
+<p>设 $G$ 是简单连通图，每个顶点是偶顶点，证明 $\omega(G-v)\le \dfrac{1}{2}d(v)$.</p>
+<p><strong>证明：</strong></p>
+<p>假设 $\omega(G-v)&gt;\dfrac{1}{2}d(v)$，由抽屉原理，删去 $v$ 后有一个连通分支只和 $v$ 有一条连边，那么这个连通分支是一个只有一个度数为奇数的点，由握手定理，显然不可能。证毕！</p>
+<p><strong>8.23</strong></p>
+<p>设 G 是二分图，证明 G 的顶点可以适当标号，使得 $M(G)$ 表示为如下形式：</p>
+<p>$$M(G) = \begin{pmatrix} 0 &amp; A_{12} \ A_{21} &amp; 0 \end{pmatrix}$$</p>
+<p>其中 $A_{21} = A_{12}^T$。</p>
+<p><strong>证明：</strong></p>
+<p>假设 $G$ 的点集被分为 $S, T$，则 $S,T$ 内任意两个点都没有连边，顶点分别放在左上角和右下角，则这两个矩阵为全零矩阵，由于邻接矩阵是对称矩阵，故证毕。</p>
+<p><strong>8.24</strong></p>
+<p>证明连通图 $G$ 是欧拉图当且仅当连通图 $G$ 是若干条边不相重的回路之并。</p>
+<p><strong>证明：</strong></p>
+<p>若 $G$ 是欧拉图，则起可以被一条回路不重不漏地走一遍，必要性成立。</p>
+<p>若 $G$ 是若干条边不相重的回路之并，任取一个点作为起点，其任意一条邻接边作为始边。假设走到一个点时，这个点在另若干条回路上，则可以绕着这个回路走一圈回到该点，故可以消掉这一个回路。递归地操作下去则相当于最终仅剩始边所在的回路，走点顺序即为欧拉回路。充分性成立。</p>
+<p><strong>8.25</strong></p>
+<p>好的，这是两道题分别对应的 Markdown：</p>
+<p>(1) 已知图 $G$ 至少要 $k$ 笔才能画成，删去一边后得到图 $G’$，问 $G’$ 至少需要几笔画成？</p>
+<p>解：若 $k=1$，如果有两个奇点，则可能为 $1$ 可能为 $2$，如果没有奇点，则还是 $1$.</p>
+<p>若 $k \ne 1$，若删去的边连接两个奇点，则为 $k-1$，若连接一奇一偶，则为 $k$，若连接两偶，则为 $k+1$.</p>
+<p>(2) 设连通图 $G$ 具有 $2k$ 个奇顶点，证明 $G$ 中必有 $k$ 条没有公共边的链包含 $G$ 的所有边。</p>
+<p><strong>证明：</strong></p>
+<p>将这 $2k$ 个奇顶点任意两两配对，得到 $k$ 个顶点对：</p>
+<p>$(v_1, v_2), (v_3, v_4), \dots, (v_{2k-1}, v_{2k})$</p>
+<p>向图 G 中添加 $k$ 条新边 $e_1, e_2, \dots, e_k$，其中 $e_i = (v_{2i-1}, v_{2i})$.</p>
+<p>得到新图 $G^<em>$，它的顶点集与 G 相同，边集 $E(G^</em>) = E(G) \cup {e_1, e_2, \dots, e_k}$，且每个顶点的度数均为偶数，则 $G^*$ 是一个欧拉图，故存在欧拉回路 $C$ 。</p>
+<p>在 $C$ 中删去 $e_1,e_2,…e_k$ 则 $C$ 被断成了 $k$ 条不交的链，并且他们覆盖了 $E(G)$。证毕！</p>
 
     </div>
 
