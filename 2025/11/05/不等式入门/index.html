@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"sunglassmanalex.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.26.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="不等式入门">
+<meta property="og:url" content="https://sunglassmanalex.github.io/2025/11/05/%E4%B8%8D%E7%AD%89%E5%BC%8F%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="Sunglassman&#39;s Blog">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-11-05T15:42:47.000Z">
+<meta property="article:modified_time" content="2025-11-13T17:16:31.415Z">
+<meta property="article:author" content="Sunglassman">
+<meta property="article:tag" content="高中数学">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://sunglassmanalex.github.io/2025/11/05/%E4%B8%8D%E7%AD%89%E5%BC%8F%E5%85%A5%E9%97%A8/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://sunglassmanalex.github.io/2025/11/05/%E4%B8%8D%E7%AD%89%E5%BC%8F%E5%85%A5%E9%97%A8/","path":"2025/11/05/不等式入门/","title":"不等式入门"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>不等式入门 | Sunglassman's Blog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Sunglassman's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sunglassman</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://sunglassmanalex.github.io/2025/11/05/%E4%B8%8D%E7%AD%89%E5%BC%8F%E5%85%A5%E9%97%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sunglassman">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunglassman's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="不等式入门 | Sunglassman's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          不等式入门
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-11-05 23:42:47" itemprop="dateCreated datePublished" datetime="2025-11-05T23:42:47+08:00">2025-11-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-11-14 01:16:31" itemprop="dateModified" datetime="2025-11-14T01:16:31+08:00">2025-11-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%AB%98%E4%B8%AD%E6%95%B0%E5%AD%A6%E7%BB%83%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">高中数学练习</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%AB%98%E4%B8%AD%E6%95%B0%E5%AD%A6%E7%BB%83%E4%B9%A0/%E4%B8%8D%E7%AD%89%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">不等式</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%AB%98%E4%B8%AD%E6%95%B0%E5%AD%A6%E7%BB%83%E4%B9%A0/%E4%B8%8D%E7%AD%89%E5%BC%8F/%E6%95%99%E6%A1%88/" itemprop="url" rel="index"><span itemprop="name">教案</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+            {left: "\\begin{align}", right: "\\end{align}", display: true},
+            {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+            {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+            {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+            {left: "\\[", right: "\\]", display: true}
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="4ff536c0de9c93bae400f7b86918661017a1adcc638dc548510598424dfc8517">8ecc0c473062a23dd9a2fa42b10228605a580178a5b2e954db91e63a9777f16bdbe8399440880af6bb555afb7880404864a16dcf7f5cdd718e18af4f795ba559307492f1aa07aa7a6ccbfb194d78913d9cbce8ef621d9867a97d0359d6c1dc2aad078dca1fab389afed76d11b8bbb9917a56062a7ef33a02779aeb11a9874ebd32079c42196bd939cec69db4bc77658a1990e71f56359c03d76cf9881d46888cbb6887d7a5bc7961ae9b7b0a185d25c13879f15e99c727b68a8723b41a7602771d931f0bbe769de11b29cce2aa72e449d088c307fed7112bb9404b57a5181d0dfc1c08585fa96e05ae2c7a962a70d8f738f55940f882c0d3e904fa2ae96289be069f3c4301b467a37da20f7a9ff02495f8241c4ef44af0e4f30f9cd69eeba7acc6dcb1a7f025f64f79a7d820504f4b5a3c2bdd9232f8fb9253d22863bb27e499da5fff653fa11de533ece263b66b11309141561d1c354cc489fddfc2a4cdf0f24a80ed8507f4fc6e138fbb6496e380383059a95b0aedc4bdfc339f20be1772795f467cc0c5e055094d97f7b89720006ceb4098ac6821245f9b455bf6f59365e21912c2f96f0787980a3b77a44d172b8d43a5eeaef05286a54167b730b487eb617a9b9783a049eec233f2f26e9426aca72b31834af36944cc05454d4166e09ba49151f6b7c446023d5b9fa5be533f5c5bfa7908e641c56b101fc3f10fedca60026a192982d76a2b573c89eb20fc224d7e77eb08936be73d8a234f252adcd6d756b724ad96947c8ce52906cdab6c8c7f244c888b24f4144a6000943def7cd29c6df380ef342da26c09785a9c522fcb4291d5a83d5a9a362ad722d9726c99826febfb703e228afb73fc26fcd6061355cf7b987482844a368d14f2ba5aae8425cb9aa0c20ccfbbf2e7c2498bc1b7878b1056a9ad3095c3d0d0e848f9eaac4765650b795b9c2cde01e1d00405d7a0935f16d3a29fcea4f76d2892ed009cc0b16ffb778e8094dea7c326636ccdaba65851cb98f24c491d5a077792ee926618923229e7f02b09df3911c8ea6772e5dcc52914bdc07a97672bcd3cdfbaad1a349277e63a43eaa52eeee176664878cbd89959f1bfde2675677222311380102b5b2f6b0937d52c1f9afb841cf84eaa17ec904e488d73c733f5ba232b4a2c0eb6635b24bc1d98067f4273c60370cc7846c305411e092d60c4403e3845207903194d5acc17aecfcd43f5a72a7530654f63689447c25b42e7e63adf884159899707277aed7faabebd900ed2b6604642e1a2b8e1f59528e072dbf1ffa3bcbffb4cdf5838638be865a2d85ce85a7c7fb1f70143e9ceca3dc5e460b60eba2d81d28853a834d142b0e89bf6c834bb230659ab9d35c65a037fc68007d84b6ad4dc8f63ca8046030493eca3e341ff4ea65a7c368a4fe01b59642345580b2218221fe31e2413297b99f63db087dcbe53365730da2a41d115872357492a3765bfa34e4323069cf88593a8520fa44f5a06054f2222b2e9f737ccf5de155ba9a84d9a897125d2314478a4097f7c04ff8e650673e601ff3bca0eab2def542b5f65ff406b60e618c98a17dcfc290e3d53668ace35651b05c171c8a425099be3146bdccce540ae729025a3e4031d84d3aac1cdb0700e31ce687dfe9960f3be91e3fae45204a7ee9d7b140a481dd133994a8975beea7e6c7c8ef490611a9a018ff903359c825b27a4110a6803a2e2bcdfb6e88f713fb0567c45de393785ffa82b6476eb6f0b72c0e95116dc5d0781cfac64ad28f517f601c47fe3c23aaccfc3f49e9a3461770ad44946bf7d14bda2a881cfa0b228fd725c0adccc24406024ffdba8c6219b1959c1970d855c3873c2971b87c491c98fd2d617632946601b4b35de90aeff51ee4c529f5b901209666ffa8e321a0822ba6546b6c395261d827784f49a90083bef1bbb5f9c2e738b3c1858e6f85d5d9b3bef53d9fe1636ac05d4c1a3faef6f05bd547938834733255033f83ffd40e439b301bd1ae9d3019c694749d072990e1e4537494541d2bb4c7b28bfdedddcb83f397748caf87de819ddf8e6fa41ece7461a2027469bfaf994787b502529d05ccc0f98c339b2d89ef696f99f4ad7ae4ad78f728ca49f1fd03113984fb953444e11e1b7df5e9e6cad607a07ee238ecd3d2a99471e5bb5e5a1c522897dd5853a4b6e3e04049404b9e56fff6023df5505e342e4049a32980c211c91c33a0c965c748567d474fbcdcbdfdbfd4de18a50317900a6f061f9df0f4c3952fa0be1d2393d76231cb2af89a8fdc31e158e4cc8b138100377abd41ac15cbb7cbccaea6cae36493652ba9a9e175d8a214198415ee3ff80cd3aa5bb1debf99f9aa3199fe61ff11ae1156b6b42e82211083a1806ddb3827488b7e6f2a1be4c27573712f99f2ce40727a02e4d9132e2559ab7bbb5e035670035667b652804f12ca9ae1d8e1efc39eece9e550f1c06b52da12bc35ee7e42f53453c42fd2c779328afca56d87373c6b347e5e851fbd6059b6f861c0e8cb09abac1b731362c81ac21710fe544d5c59b85ee437272383b37c97d27236e2d834fb656c6a2cc80473d2c4b44d64b6e3724f641bf0b9884b2ab125391150389e13b12e0e0bfb3f9b55a460ac5bb34181d31b8b8866acd54b734220585e2905f5e70485ae30c41703b1313e2f1c1bd2a2134a6357dd453a1ff8d4ec0a497f077525fcc568403a3bdd84fd1e6a1f28fe1426a8e809482c4c7dc66d699338a07256412acc298af2612d282d4ac1667abe80b128b65ad9a59e9032effb09f3c5146ffb5d1a6486a97556d932861ed8bcf94c2ea92b90d53c887496276f2a3312683f1cd76c2d2b37c190c5aca3a1424eb395887f79789f8091cfa9e8b376a48f4b8ef417d935a224e10c46dfba0c9bc9de9c390aa22d9765aca26d96c4aa835668026f232f3e443d8967c7447a9b6b7d2abbe68c03857a0079d43cde5415e7bbd81346da49f18729320779420bb6a41ce5ce003a27087eca7b9685bc8a91c5c7fdb5811fabda8d35917e23443ba875da99557f297a6e0fe91b5f9d01f147aa1c56662aaec8ecca005a6fe7d5a241378f4d8f46ec4c45cb07dafc162b794c70b3701da05713181ece774388786f2342a9203982fc93ea96330531a5fd032cd282974d1f6fd8fd330cbce7f882530cd48016f1748eda3c32e007ee61c70982980701d5da3e4bc637993879bcba2209f972546098b9e41fa7798fd155ae836465a71d9672d35c3269da9f44f1dc3bba807d0b43a1a5bbac73e0ca9e38f0fc0d0101135a8b3d9c9c9904f27b8b2b2421f8fc36e767c9b7fbd809a232e5891f53f1330f68391ff13e83cdaf479cabc3a9831151113876215922217b43c2781cd2df01404112ae03853b55d203927d7b6bf02588d5c5d93b07362a8ca8ce77dc34d525dfd3df96a5c7a83154955e6ff114b0e44d02c95779acbdf5f9d23cd3b3e7a565120c58e7ee6ae8e5f863f7c2b4f963789b803f7e5dff7be9857e22dc38e8e25970711535b512bd4858c2c09e8422c1afef3f7bcc64ffcaa9b14ff3be82f0ead7dfe6dd6e228a526b4739cc560f17ec172ee75dc077e665a669a19f1798b847b78587bfdbb81ce7193c3f14a4b84ca1bac874d86833aa6822f3f8d16d1377db4d9606dab2604d54d0ff229a81656f83b1bcd85e9d81822e301196a873a1c9bf68e6c572d277dc28efe40924ae6129c64237ef3473c599f4554f918c1b506a8c9deeb4f513a2681282a9fe74807ba9095803fe60bdaa2d6e10d4c34bbc5ee68f54de5ef3aab381f7d6c22fbb781386f91134b9fbf00274e7047f2a65e3ab22560ff72c5ef305df79e37e90f94e4b5b42150b69b86778e77fecbb124cdf66f08421168b31ade927018bcc76a1a5e238d881688e533e4ee7d10ee0e55046460343019a868bf45ae3790ffcc4aeaca54521c7d6f2d6bd266f928e76e85f1de4113c43b0143a5015ec1ff205c4f2793d5b59ed0105b656b0537f48c619c4d42f0762dc9fd8297c26ed673e6222ea42f4ed3da74e40bf4b82344ba0cd041344ae8b20c8d1d2b10c34ac571b24d1c36812d68719723856c786f0c6349e59a93c072de12153cba0bedd766fe5f44d95225d3c07aad7e4e0a9ccf5de82f148943a02f3d875e7bfa41d99b17270045fb76a5b78d6e5272423dcf1880e6dd9a0f9c33def5121b1cc200e877e079e83ed19995aebe904d3fd235cd58c50c1ee7ef811554d856f8f137fb1cccdab5c4324a5fc22180f8093cb79ddfeab15c2c92dbb9cbbd8279bbfee5aef17bb1f7244e8852a2256e0a4cc293467abe3d57cbdbc4a0808c190e7c98d2ff21b69a63e00ed0ad2a6c0cf42647b6be9d5f47acdf7802ba49a763988e959e007e1b0634a72e3b544e7d9bf4c59044f618e5ea4d4f8d3c43529d069731c4c8b6faac356f509262c46d9da941e516aaf6efa842e833ea5d7e3ad9e743cddef57d524ddcb86dce320b597a72fd69bce8f800d2a85dcd17cc5cd06581289dabcecc41837348f256291ae10f801c3fe8ce006bd8144a82473d6f2a85fcc1c6dc754e38587773c287cfe9afe67e66735066f9ad1f9be46f34dea2f7ddd565b9eb18fa143cc124dab1c33d89181a2971247458a20df8e6abbe308389cd3c76d120477df686eb14ebcabedf0e1d3fb5860c639e65cedc61c111b78aa012498b22728b71848d9208510b6559c5081df2cf96e132e7a94d9d9232d51308d658cb6f39d1f6301e58dff24d38563836c4180c2f03ca6e3f7f3e8eb6947a2cc065fccd5db927d8f7aacda42059b2ba9c47b71678efed239e5413215643cdd182a2384d25d7248be451f1148aa3a000bd15b068d1f555dfc3ec7cff3dfc421a6ee1fe9f42b730ff561468aa804862d0c9781c77b5ec8c5388042aef25421a1864f350da2880952c84aaeec47d503b86c8b3450f54c8bf7d1314a3417dc78b9265feddf2993e6261ced6da4b109db7ae454a6faa37cbb99aa3a9d27d7cd5476d953e7b55ad3d520e8d249f3f3a149a4b8e64e6cace0931cbfd42f4dea46d140c1f2e43a4fb80bb001c6a76c3bca35aecaf736e97d26e6004fbc63a01fc0914eaf604870e8b0cd2d35e60500250b97618b1ff2b4c7fbf34bd55b5c372868ec153e5fdac91e19b6045a2058f51eb2dd2ef9d50f6c0db8f29abba8fd64693df67f7e5cbdb54dc594f2d34ba7bbf10afd692a62c561a98991e1a4a0bd7cdd7fa1948aa67e6e94b2ba65eaf4e42131c6006174799926e22d305c8e4ec94cfeb559831d2a196b425a88a322d897d85ae6f64a863c3bff556f5938c19a4c68a06a10abd5035e42ee1e501179ae178b06b1eecc70b183d334211298cb13310aad128d06f92</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%AB%98%E4%B8%AD%E6%95%B0%E5%AD%A6/" rel="tag"># 高中数学</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/11/05/%E5%87%BD%E6%95%B0%E6%80%A7%E8%B4%A8%E5%85%A5%E9%97%A8%E7%BB%83%E4%B9%A01-%E6%95%99%E5%B8%88%E7%89%88/" rel="prev" title="函数性质入门练习1 (教师版)">
+                  <i class="fa fa-angle-left"></i> 函数性质入门练习1 (教师版)
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/11/05/%E5%87%BD%E6%95%B0%E6%80%A7%E8%B4%A8%E5%85%A5%E9%97%A8%E7%BB%83%E4%B9%A02-%E6%95%99%E5%B8%88%E7%89%88/" rel="next" title="函数性质入门练习2 (教师版)">
+                  函数性质入门练习2 (教师版) <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Sunglassman</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
