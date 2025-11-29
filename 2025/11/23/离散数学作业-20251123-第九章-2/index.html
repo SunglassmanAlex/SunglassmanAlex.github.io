@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"sunglassmanalex.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.26.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="离散数学作业 20251123 第九章-2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="离散数学作业-20251123-第九章(2)">
+<meta property="og:url" content="https://sunglassmanalex.github.io/2025/11/23/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E4%BD%9C%E4%B8%9A-20251123-%E7%AC%AC%E4%B9%9D%E7%AB%A0-2/index.html">
+<meta property="og:site_name" content="Sunglassman&#39;s Blog">
+<meta property="og:description" content="离散数学作业 20251123 第九章-2">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-11-23T12:42:52.000Z">
+<meta property="article:modified_time" content="2025-11-23T13:43:35.807Z">
+<meta property="article:author" content="Sunglassman">
+<meta property="article:tag" content="作业">
+<meta property="article:tag" content="离散数学">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://sunglassmanalex.github.io/2025/11/23/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E4%BD%9C%E4%B8%9A-20251123-%E7%AC%AC%E4%B9%9D%E7%AB%A0-2/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://sunglassmanalex.github.io/2025/11/23/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E4%BD%9C%E4%B8%9A-20251123-%E7%AC%AC%E4%B9%9D%E7%AB%A0-2/","path":"2025/11/23/离散数学作业-20251123-第九章-2/","title":"离散数学作业-20251123-第九章(2)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>离散数学作业-20251123-第九章(2) | Sunglassman's Blog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Sunglassman's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">离散数学作业 20251123 第九章-2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#9-7"><span class="nav-number">1.1.</span> <span class="nav-text">9.7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-8"><span class="nav-number">1.2.</span> <span class="nav-text">9.8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-9"><span class="nav-number">1.3.</span> <span class="nav-text">9.9</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-14"><span class="nav-number">1.4.</span> <span class="nav-text">9.14</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-16"><span class="nav-number">1.5.</span> <span class="nav-text">9.16</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-17"><span class="nav-number">1.6.</span> <span class="nav-text">9.17</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sunglassman</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://sunglassmanalex.github.io/2025/11/23/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E4%BD%9C%E4%B8%9A-20251123-%E7%AC%AC%E4%B9%9D%E7%AB%A0-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sunglassman">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunglassman's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="离散数学作业-20251123-第九章(2) | Sunglassman's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          离散数学作业-20251123-第九章(2)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-11-23 20:42:52 / 修改时间：21:43:35" itemprop="dateCreated datePublished" datetime="2025-11-23T20:42:52+08:00">2025-11-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">计算机数学基础</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">离散数学</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/%E4%BD%9C%E4%B8%9A/" itemprop="url" rel="index"><span itemprop="name">作业</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+            {left: "\\begin{align}", right: "\\end{align}", display: true},
+            {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+            {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+            {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+            {left: "\\[", right: "\\]", display: true}
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+<h1>离散数学作业 20251123 第九章-2</h1>
+<span id="more"></span>
+<h2 id="9-7">9.7</h2>
+<p>设连通平面图 $G$ 的顶点度数至少为 3，且其面数 $f &lt; 12$，证明 $G$ 有一个面的边数小于 5。</p>
+<p><strong>证明：</strong></p>
+<p>假设对任意一个面，有 $deg®\ge 5$，由 $\sum deg®=2|E|$，知 $f \le \dfrac{2}{5}|E|$.</p>
+<p>由于 $G$ 的顶点度数 $\delta(G) \ge 3$，由 $\sum \deg(v) = 2|E|$ ，知： $2|E| \ge 3|V| \implies |V| \le \dfrac{2}{3}|E|$。</p>
+<p>由欧拉公式：$v-e+f=2$，得 $$\dfrac{2}{3}|E| - |E| + \dfrac{2}{5}|E| \ge 2$$.</p>
+<p>故 $$|E| \ge 30$$.</p>
+<p>所以 $e-\dfrac{2}{3}e+f\ge v+f-e=2$ 得 $e\le 3f-6$.</p>
+<p>故 $\dfrac{5}{2}f\le e\le 3f-6$ 得 $f\ge12$ 矛盾！</p>
+<h2 id="9-8">9.8</h2>
+<p>设图 $G$ 的顶点度数至少为 3，且其面数 $f &lt; 12$，则 $G$ 是 4-面可着色的。</p>
+<p><strong>证明：</strong></p>
+<p>设 $G^<em>$ 为 $G$ 的对偶图（Dual Graph）。$G$ 的面着色问题等价于 $G^</em>$ 的顶点着色问题。</p>
+<p>由于 $G$ 是平面图，故其对偶图 $G^<em>$ 亦为平面图，且 $G^</em>$ 的顶点数 $|V(G^*)| = f$。</p>
+<p>由 <strong>9.7</strong> 的结论可知，平面图 $G^*$ 中必然存在度数 $\deg(v) \le 4$ 的顶点。</p>
+<p>由四色定理，任意平面图 $G^<em>$ 的顶点色数 $\chi(G^</em>) \le 4$。</p>
+<p>即 $G^*$ 是 4-顶点可着色的。</p>
+<p>故原图 $G$ 是 4-面可着色的。</p>
+<h2 id="9-9">9.9</h2>
+<p>若将平面分为 $f$ 个面，每两个面都相邻，问 $f$ 最大为多少？</p>
+<p><strong>证明：</strong></p>
+<p>设该平面划分对应的平面图为 $G$，其对偶图为 $G^*$。</p>
+<p>由于 $G$ 中每两个面都相邻，则 $G^*$ 中代表面的 $f$ 个顶点两两相邻。</p>
+<p>故 $G^*$ 为 $f$ 个顶点的完全图 $K_f$。</p>
+<p>因为 $G$ 是平面图，故 $K_f$ 也必须是平面图。</p>
+<p>对于简单连通平面图，若 $|V| \ge 3$，需满足 $|E| \le 3|V| - 6$。</p>
+<p>在完全图 $K_f$ 中，$|V|=f$，$|E|=\dfrac{f(f-1)}{2}$。</p>
+<p>代入得：$$\dfrac{f(f-1)}{2} \le 3f - 6$$</p>
+<p>解得 $3 \le f \le 4$。</p>
+<p>且当 $f=5$ 时，$K_5$ 的边数 $|E|=10$，而 $3|V|-6 = 3(5)-6=9$，因 $10 &gt; 9$，故 $K_5$ 非平面图。</p>
+<p>故 $f$ 最大为 4。</p>
+<p>以下是题目文本的 Markdown 以及符合严谨数学风格的证明过程。</p>
+<h2 id="9-14">9.14</h2>
+<p>证明：若图 $G$ 中任意两个奇回路均有一个公共顶点，则 $\chi(G) \le 5$。</p>
+<p><strong>证明：</strong></p>
+<p>若 $G$ 中不存在奇回路，则 $G$ 为二部图，$\chi(G) \le 2 &lt; 5$，命题成立。</p>
+<p>若 $G$ 中存在奇回路，设 $C$ 为 $G$ 中的一个奇回路，顶点集为 $V©$，且 $\chi© = 3$。</p>
+<p>考虑导出子图 $G’ = G - V©$。</p>
+<p>假设 $G’$ 中存在奇回路 $C’$，则 $C’$ 亦为 $G$ 中的奇回路。</p>
+<p>根据题目，任意两个奇回路均有一个公共顶点，所以 $V© \cap V(C’) \neq \emptyset$。</p>
+<p>但 $G’$ 是移除了 $V©$ 后得到的图，故 $V(C’) \cap V© = \emptyset$，矛盾。</p>
+<p>因此，$G’$ 中不包含任何奇回路，$G’$ 为二部图，即 $\chi(G’) \le 2$。</p>
+<p>将 $G’$ 的着色方案与 $C$ 结合，可以有：</p>
+<p>$\chi(G) \le \chi(G’) + \chi© = 2 + 3 = 5$。</p>
+<p>证毕。</p>
+<h2 id="9-16">9.16</h2>
+<p>(1) 证明：由任意有限条直线（可以相交）划分平面所得的图是面两色的。</p>
+<p>(2) 证明：由任意有限个圆（可以相交）划分平面所得的图是面两色的。</p>
+<p><strong>(1) 证明：</strong></p>
+<p>运用数学归纳法：</p>
+<ol>
+<li>
+<p>当 $n=1$ 时，平面被分为两个半平面，分别着色为黑、白，满足面两色，命题成立。</p>
+</li>
+<li>
+<p>假设当 $n=k$ 时命题成立，即平面已被着色。</p>
+</li>
+<li>
+<p>当 $n=k+1$ 时，设新加入的直线为 $L$。$L$ 将平面分为两个半平面 $H_1, H_2$。</p>
+<p>保持 $H_1$ 中的原有着色不变，将 $H_2$ 中所有区域的颜色反转（黑变白，白变黑）。</p>
+<p>对于不与 $L$ 相邻的边界，两侧颜色性质未变，依然满足条件。</p>
+<p>对于 $L$ 上的边界，其两侧原本同色，因 $H_2$ 侧反转，现变为异色，满足相邻面颜色不同。</p>
+</li>
+</ol>
+<p>由数学归纳法，命题得证。</p>
+<p><strong>(2) 证明：</strong></p>
+<p>对圆的个数 $n$ 进行数学归纳。</p>
+<ol>
+<li>
+<p>当 $n=1$ 时，圆内着色黑，圆外着色白，满足面两色，命题成立。</p>
+</li>
+<li>
+<p>假设当 $n=k$ 时命题成立。</p>
+</li>
+<li>
+<p>当 $n=k+1$ 时，设新加入的圆为 $C$。保持圆 $C$ 外部的着色不变，将圆 $C$ 内部所有区域的颜色反转。</p>
+<p>对于非 $C$ 的边界，两侧颜色性质未变，依然满足条件。</p>
+<p>对于圆 $C$ 构成的边界，其两侧原本同色，现一侧反转，变为异色。</p>
+</li>
+</ol>
+<p>由数学归纳法，命题得证。</p>
+<h2 id="9-17">9.17</h2>
+<p><strong>证明：</strong></p>
+<p>设完全二部图 $K_{m,n}$ 的两部分顶点集分别为 $X = {x_0, x_1, \dots, x_{m-1}}$ 和 $Y = {y_0, y_1, \dots, y_{n-1}}$。</p>
+<p>不妨设 $m \le n$。此时 $\Delta(K_{m,n}) = \max(m, n) = n$。</p>
+<p>显然 $\chi’(K_{m,n}) \ge \Delta(K_{m,n}) = n$。</p>
+<p>构造如下边着色函数 $c: E \to {0, 1, \dots, n-1}$：</p>
+<p>对于任意边 $e = x_i y_j$ （其中 $0 \le i &lt; m, 0 \le j &lt; n$），定义：</p>
+<p>$$c(x_i y_j) = (i + j) \pmod n$$</p>
+<p><strong>验证：</strong></p>
+<ol>
+<li>
+<p>考察顶点 $x_i$ ($i$ 固定)：</p>
+<p>与其相连的边为 $x_i y_0, x_i y_1, \dots, x_i y_{n-1}$。</p>
+<p>对应的颜色为 $(i+0), (i+1), \dots, (i+n-1) \pmod n$。</p>
+<p>这构成了模 $n$ 的完全剩余系，即颜色互不相同。</p>
+</li>
+<li>
+<p>考察顶点 $y_j$ ($j$ 固定)：</p>
+<p>与其相连的边为 $x_0 y_j, x_1 y_j, \dots, x_{m-1} y_j$。</p>
+<p>对应的颜色为 $(0+j), (1+j), \dots, (m-1+j) \pmod n$。</p>
+<p>由于 $m \le n$，这些值在模 $n$ 意义下显然互不相同。</p>
+</li>
+</ol>
+<p>该构造使用了 $n$ 种颜色，且为正常边着色。</p>
+<p>故 $\chi’(K_{m,n}) \le n$。</p>
+<p>综上，$\chi’(K_{m,n}) = n = \Delta(K_{m,n})$。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%BD%9C%E4%B8%9A/" rel="tag"># 作业</a>
+              <a href="/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/" rel="tag"># 离散数学</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/11/19/Data-Structure-Project-Report/" rel="prev" title="Data Structure Project Report">
+                  <i class="fa fa-angle-left"></i> Data Structure Project Report
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/11/26/CS-APP-AttackLab%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" rel="next" title="CS:APP AttackLab实验报告">
+                  CS:APP AttackLab实验报告 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Sunglassman</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
