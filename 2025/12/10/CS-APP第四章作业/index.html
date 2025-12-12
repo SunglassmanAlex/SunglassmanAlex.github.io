@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"sunglassmanalex.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.26.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="CS:APP第四章作业">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS:APP第四章作业">
+<meta property="og:url" content="https://sunglassmanalex.github.io/2025/12/10/CS-APP%E7%AC%AC%E5%9B%9B%E7%AB%A0%E4%BD%9C%E4%B8%9A/index.html">
+<meta property="og:site_name" content="Sunglassman&#39;s Blog">
+<meta property="og:description" content="CS:APP第四章作业">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://sunglassmanalex.github.io/2025/12/10/images/image-20251210135010162.png">
+<meta property="article:published_time" content="2025-12-10T05:30:23.000Z">
+<meta property="article:modified_time" content="2025-12-10T07:47:52.368Z">
+<meta property="article:author" content="Sunglassman">
+<meta property="article:tag" content="实验报告">
+<meta property="article:tag" content="计算机">
+<meta property="article:tag" content="计算机系统基础">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sunglassmanalex.github.io/2025/12/10/images/image-20251210135010162.png">
+
+
+<link rel="canonical" href="https://sunglassmanalex.github.io/2025/12/10/CS-APP%E7%AC%AC%E5%9B%9B%E7%AB%A0%E4%BD%9C%E4%B8%9A/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://sunglassmanalex.github.io/2025/12/10/CS-APP%E7%AC%AC%E5%9B%9B%E7%AB%A0%E4%BD%9C%E4%B8%9A/","path":"2025/12/10/CS-APP第四章作业/","title":"CS:APP第四章作业"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>CS:APP第四章作业 | Sunglassman's Blog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Sunglassman's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">CS:APP第四章作业</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-45"><span class="nav-number">1.1.</span> <span class="nav-text">4.45</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-47"><span class="nav-number">1.2.</span> <span class="nav-text">4.47</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">4.51</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sunglassman</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://sunglassmanalex.github.io/2025/12/10/CS-APP%E7%AC%AC%E5%9B%9B%E7%AB%A0%E4%BD%9C%E4%B8%9A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sunglassman">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sunglassman's Blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="CS:APP第四章作业 | Sunglassman's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CS:APP第四章作业
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-12-10 13:30:23 / 修改时间：15:47:52" itemprop="dateCreated datePublished" datetime="2025-12-10T13:30:23+08:00">2025-12-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">计算机系统基础</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/%E7%90%86%E8%AE%BA%E4%BD%9C%E4%B8%9A/" itemprop="url" rel="index"><span itemprop="name">理论作业</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\(", right: "\\)", display: false},
+            {left: "\\begin{equation}", right: "\\end{equation}", display: true},
+            {left: "\\begin{align}", right: "\\end{align}", display: true},
+            {left: "\\begin{alignat}", right: "\\end{alignat}", display: true},
+            {left: "\\begin{gather}", right: "\\end{gather}", display: true},
+            {left: "\\begin{CD}", right: "\\end{CD}", display: true},
+            {left: "\\[", right: "\\]", display: true}
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+<h1>CS:APP第四章作业</h1>
+<span id="more"></span>
+<h2 id="4-45">4.45</h2>
+<p><strong>(a)</strong> 不正确，当<code>REG</code> 表示 <code>%rsp</code> 时，因为先执行了 <code>subq $8, %rsp</code>，相当于把 <code>%rsp</code> 的指针已经动掉了，无法访问到应该被复制的东西，指令错误。</p>
+<p><strong>(b)</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">movq %rsp -8(%rsp)</span><br><span class="line">subq $8 %rsp</span><br></pre></td></tr></table></figure>
+<h2 id="4-47">4.47</h2>
+<p><img src="../images/image-20251210135010162.png" alt="image-20251210135010162"></p>
+<p><strong>(a)</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">bubble_sort</span><span class="params">(<span class="type">long</span>* data, <span class="type">long</span>* right)</span> </span>&#123;</span><br><span class="line">    <span class="type">long</span> *i, *last;</span><br><span class="line">    <span class="keyword">for</span> (last = right; last != data; last--) &#123;</span><br><span class="line">        <span class="keyword">for</span> (i = data; i != last; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (*(i + <span class="number">1</span>) &lt; *i) &#123;</span><br><span class="line">                <span class="type">long</span> t = *(i + <span class="number">1</span>);</span><br><span class="line">                *(i + <span class="number">1</span>) = *i;</span><br><span class="line">                *i = t;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>(b)</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">bubble_sort:</span><br><span class="line">    irmovq $1, %r8</span><br><span class="line">    subq   %r8, %rsi</span><br><span class="line">    addq   %rsi, %rsi</span><br><span class="line">    addq   %rsi, %rsi</span><br><span class="line">    addq   %rsi, %rsi </span><br><span class="line">    addq   %rdi, %rsi     # %rsi 存的是right</span><br><span class="line">L1:</span><br><span class="line">    rrmovq %rdi, %rax     # i = data</span><br><span class="line">L2:</span><br><span class="line">    rrmovq %rsi, %r10</span><br><span class="line">    subq   %rax, %r10</span><br><span class="line">    je     L4</span><br><span class="line">    mrmovq (%rax), %r11   # *i</span><br><span class="line">    mrmovq 8(%rax), %r12  # *(i+1)</span><br><span class="line">    rrmovq %r12, %r9</span><br><span class="line">    subq   %r11, %r9</span><br><span class="line">    jge    L3</span><br><span class="line">    rmmovq %r12, (%rax)</span><br><span class="line">    rmmovq %r11, 8(%rax)</span><br><span class="line">L3:</span><br><span class="line">    irmovq $8, %r13</span><br><span class="line">    addq   %r13, %rax</span><br><span class="line">    jmp    L2</span><br><span class="line">L4:</span><br><span class="line">    irmovq $8, %r13</span><br><span class="line">    subq   %r13, %rsi</span><br><span class="line">    rrmovq %rsi, %r10</span><br><span class="line">    subq   %rdi, %r10</span><br><span class="line">    jg     L1</span><br><span class="line">    ret</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Chapter4-YAS/sim/y86-code</span><br><span class="line">❯ ../misc/yis bubble.yo</span><br><span class="line">Stopped <span class="keyword">in</span> 254 steps at PC = 0x13.  Status <span class="string">&#x27;HLT&#x27;</span>, CC Z=1 S=0 O=0</span><br><span class="line">Changes to registers:</span><br><span class="line">%rax:   0x0000000000000000      0x0000000000000020</span><br><span class="line">%rsp:   0x0000000000000000      0x0000000000000200</span><br><span class="line">%rsi:   0x0000000000000000      0x0000000000000018</span><br><span class="line">%rdi:   0x0000000000000000      0x0000000000000018</span><br><span class="line">%r8:    0x0000000000000000      0x0000000000000001</span><br><span class="line">%r9:    0x0000000000000000      0xffffffffffffffff</span><br><span class="line">%r11:   0x0000000000000000      0x0000000000000002</span><br><span class="line">%r12:   0x0000000000000000      0x0000000000000001</span><br><span class="line">%r13:   0x0000000000000000      0x0000000000000008</span><br><span class="line"></span><br><span class="line">Changes to memory:</span><br><span class="line">0x0018: 0x0000000000000006      0x0000000000000001</span><br><span class="line">0x0020: 0x0000000000000005      0x0000000000000002</span><br><span class="line">0x0028: 0x0000000000000004      0x0000000000000003</span><br><span class="line">0x0030: 0x0000000000000003      0x0000000000000004</span><br><span class="line">0x0038: 0x0000000000000002      0x0000000000000005</span><br><span class="line">0x0040: 0x0000000000000001      0x0000000000000006</span><br><span class="line">0x01f0: 0x0000000000000000      0x0000000000000065</span><br><span class="line">0x01f8: 0x0000000000000000      0x0000000000000013</span><br></pre></td></tr></table></figure>
+<p>完整代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">.pos 0</span><br><span class="line">    irmovq stack, %rsp</span><br><span class="line">    call main</span><br><span class="line">    halt</span><br><span class="line"></span><br><span class="line">    .align 8</span><br><span class="line">Array:</span><br><span class="line">    .quad 0x06</span><br><span class="line">    .quad 0x05</span><br><span class="line">    .quad 0x04</span><br><span class="line">    .quad 0x03</span><br><span class="line">    .quad 0x02</span><br><span class="line">    .quad 0x01</span><br><span class="line"></span><br><span class="line">main:</span><br><span class="line">    irmovq Array, %rdi</span><br><span class="line">    irmovq $6, %rsi</span><br><span class="line">    call bubble_sort</span><br><span class="line">    ret</span><br><span class="line"></span><br><span class="line">bubble_sort:</span><br><span class="line">    irmovq $1, %r8</span><br><span class="line">    subq   %r8, %rsi</span><br><span class="line">    addq   %rsi, %rsi</span><br><span class="line">    addq   %rsi, %rsi</span><br><span class="line">    addq   %rsi, %rsi</span><br><span class="line">    addq   %rdi, %rsi</span><br><span class="line">L1:</span><br><span class="line">    rrmovq %rdi, %rax</span><br><span class="line">L2:</span><br><span class="line">    rrmovq %rsi, %r10</span><br><span class="line">    subq   %rax, %r10</span><br><span class="line">    je     L4</span><br><span class="line">    mrmovq (%rax), %r11</span><br><span class="line">    mrmovq 8(%rax), %r12</span><br><span class="line">    rrmovq %r12, %r9</span><br><span class="line">    subq   %r11, %r9</span><br><span class="line">    jge    L3</span><br><span class="line">    rmmovq %r12, (%rax)</span><br><span class="line">    rmmovq %r11, 8(%rax)</span><br><span class="line">L3:</span><br><span class="line">    irmovq $8, %r13</span><br><span class="line">    addq   %r13, %rax</span><br><span class="line">    jmp    L2</span><br><span class="line">L4:</span><br><span class="line">    irmovq $8, %r13</span><br><span class="line">    subq   %r13, %rsi</span><br><span class="line">    rrmovq %rsi, %r10</span><br><span class="line">    subq   %rdi, %r10</span><br><span class="line">    jg     L1</span><br><span class="line">    ret</span><br><span class="line"></span><br><span class="line">    .pos 0x200</span><br><span class="line">stack:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1>4.51</h1>
+<table>
+<thead>
+<tr>
+<th><strong>阶段</strong></th>
+<th><strong>iaddq V, rB</strong></th>
+<th><strong>解释</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>取指</strong></td>
+<td><code>icode:ifun ← M1[PC]</code> <code>rA:rB ← M1[PC+1]</code> <code>valC ← M8[PC+2]</code> <code>valP ← PC + 10</code></td>
+<td>取出指令、寄存器ID和立即数，PC增加10字节。</td>
+</tr>
+<tr>
+<td><strong>译码</strong></td>
+<td><code>valB ← R[rB]</code></td>
+<td>读出寄存器 rB 的旧值作为被加数。</td>
+</tr>
+<tr>
+<td><strong>执行</strong></td>
+<td><code>valE ← valB + valC</code> <code>Set CC</code></td>
+<td>ALU 计算 rB的值 + 立即数，并<strong>更新条件码</strong>。</td>
+</tr>
+<tr>
+<td><strong>访存</strong></td>
+<td></td>
+<td>无内存访问。</td>
+</tr>
+<tr>
+<td><strong>写回</strong></td>
+<td><code>R[rB] ← valE</code></td>
+<td>将加法结果写回寄存器 rB。</td>
+</tr>
+<tr>
+<td><strong>更新PC</strong></td>
+<td><code>PC ← valP</code></td>
+<td>更新程序计数器。</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag"># 计算机</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" rel="tag"># 计算机系统基础</a>
+              <a href="/tags/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/" rel="tag"># 实验报告</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/11/29/%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" rel="prev" title="常用软件安装">
+                  <i class="fa fa-angle-left"></i> 常用软件安装
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Sunglassman</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
